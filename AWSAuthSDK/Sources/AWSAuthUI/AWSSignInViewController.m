@@ -23,7 +23,7 @@
 #import "AWSUserPoolsUIHelper.h"
 #import "AWSSignInViewController.h"
 
-#define DEFAULT_BACKGROUND_COLOR_TOP [UIColor darkGrayColor]
+#define DEFAULT_BACKGROUND_COLOR_TOP [UIColor grayColor]
 #define DEFAULT_BACKGROUND_COLOR_BOTTOM [UIColor whiteColor]
 
 static NSString *const RESOURCES_BUNDLE = @"AWSAuthUI.bundle";
