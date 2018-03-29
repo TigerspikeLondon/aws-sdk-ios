@@ -240,7 +240,7 @@
                                             </mask>
                                         </variation>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4Q-l4-qCO">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C4Q-l4-qCO">
                                         <rect key="frame" x="128" y="267" width="200" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="1lW-Bi-N1H"/>
@@ -278,6 +278,7 @@
                                     <constraint firstItem="Utd-qw-giI" firstAttribute="leading" secondItem="jyk-z8-NkG" secondAttribute="leading" id="POJ-2r-voI"/>
                                     <constraint firstItem="IkO-GD-xvp" firstAttribute="centerX" secondItem="jGV-Uy-Qmp" secondAttribute="centerX" id="PW8-eA-L5m"/>
                                     <constraint firstItem="DRt-0S-n1y" firstAttribute="centerY" secondItem="oXD-JT-iR2" secondAttribute="centerY" id="Rh9-gl-daQ"/>
+                                    <constraint firstItem="C4Q-l4-qCO" firstAttribute="top" secondItem="cMG-il-Rxs" secondAttribute="bottom" constant="34" id="TDn-W4-Q28"/>
                                     <constraint firstItem="jyk-z8-NkG" firstAttribute="top" secondItem="xK4-QM-voz" secondAttribute="bottom" constant="8" symbolic="YES" id="WDz-gL-0uS"/>
                                     <constraint firstItem="C4Q-l4-qCO" firstAttribute="trailing" secondItem="8lZ-tI-ceJ" secondAttribute="trailing" id="Ypw-5D-9Rp"/>
                                     <constraint firstItem="xK4-QM-voz" firstAttribute="centerX" secondItem="oXD-JT-iR2" secondAttribute="centerX" id="bAd-rJ-HfE"/>
