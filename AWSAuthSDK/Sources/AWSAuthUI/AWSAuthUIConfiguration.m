@@ -40,6 +40,8 @@
 
 @synthesize font;
 
+@synthesize textColor;
+    
 - (id)init {
     self = [super init];
     if (self) {

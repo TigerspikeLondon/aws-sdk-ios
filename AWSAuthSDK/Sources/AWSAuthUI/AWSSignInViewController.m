@@ -125,6 +125,11 @@ static NSInteger const SCALED_DOWN_LOGO_IMAGE_HEIGHT = 140;
     if (self.config.font) {
         [self setUpFont];
     }
+    
+    // Setup the font colour
+    if (self.config.textColor) {
+        [self setUpTextColour];
+    }
 }
 
 // This is used to dismiss the keyboard, user just has to tap outside the
@@ -169,7 +174,7 @@ static NSInteger const SCALED_DOWN_LOGO_IMAGE_HEIGHT = 140;
         Class formTableCell = NSClassFromString(@"AWSFormTableCell");
         self.passwordRow = [[formTableCell alloc] initWithPlaceHolder:@"Password"
                                                                  type:InputTypePassword];
-        self.userNameRow = [[formTableCell alloc] initWithPlaceHolder:@"User Name"
+        self.userNameRow = [[formTableCell alloc] initWithPlaceHolder:@"Username"
                                                                  type:InputTypeText];
         Class formTableDelegate = NSClassFromString(@"AWSFormTableDelegate");
         self.tableDelegate = [formTableDelegate new];
@@ -317,6 +322,14 @@ static NSInteger const SCALED_DOWN_LOGO_IMAGE_HEIGHT = 140;
     [self.signUpButton.titleLabel setFont:self.config.font];
     [self.forgotPasswordButton.titleLabel setFont:self.config.font];
     [self.orSignInWithLabel setFont:self.config.font];
+}
+
+- (void)setUpTextColour {
+    AWSDDLogDebug(@"Setting up Text Colour");
+    [self.signInButton.titleLabel setTextColor:self.config.textColor];
+    [self.signUpButton.titleLabel setTextColor:self.config.textColor];
+    [self.forgotPasswordButton.titleLabel setTextColor:self.config.textColor];
+    [self.orSignInWithLabel setTextColor:self.config.textColor];
 }
 
 - (void)barButtonClosePressed {

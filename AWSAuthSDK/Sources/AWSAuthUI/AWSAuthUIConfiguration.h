@@ -74,6 +74,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ @property text colour
+ @brief Text colour for the text in the SignInView and all its subviews.
+ **/
+@property (nonatomic, nullable) UIColor *textColor;
+    
+/**
  Registers the shared instance of sign in provider implementing `AWSSignInProvider`.
  
  @param     signInButtonViewClass    The SignInButtonView that conforms to the `AWSSignInButtonView` protocol.
