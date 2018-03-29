@@ -137,7 +137,7 @@ completionHandler:(nonnull void (^)(id _Nullable, NSError * _Nullable))completio
     if(error){
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:error.userInfo[@"__type"]
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@""
                                                                                      message:error.userInfo[@"message"]
                                                                               preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault handler:nil];

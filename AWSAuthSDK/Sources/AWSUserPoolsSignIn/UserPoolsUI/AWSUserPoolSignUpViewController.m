@@ -160,7 +160,7 @@ id<AWSUIConfiguration> config = nil;
         AWSDDLogDebug(@"Successful signUp user: %@",task.result.user.username);
         dispatch_async(dispatch_get_main_queue(), ^{
             if(task.error){
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:task.error.userInfo[@"__type"]
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@""
                                                                                          message:task.error.userInfo[@"message"]
                                                                                   preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
@@ -249,7 +249,7 @@ id<AWSUIConfiguration> config = nil;
         dispatch_async(dispatch_get_main_queue(), ^{
             if(task.error){
                 if(task.error){
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:task.error.userInfo[@"__type"]
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@""
                                                                                              message:task.error.userInfo[@"message"]
                                                                                       preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
@@ -281,7 +281,7 @@ id<AWSUIConfiguration> config = nil;
     [[self.user resendConfirmationCode] continueWithBlock:^id _Nullable(AWSTask<AWSCognitoIdentityUserResendConfirmationCodeResponse *> * _Nonnull task) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if(task.error){
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:task.error.userInfo[@"__type"]
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@""
                                                                                          message:task.error.userInfo[@"message"]
                                                                                   preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
