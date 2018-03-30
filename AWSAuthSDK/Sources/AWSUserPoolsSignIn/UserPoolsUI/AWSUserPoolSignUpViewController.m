@@ -245,7 +245,7 @@ id<AWSUIConfiguration> config = nil;
                          completion:nil];
         return;
     }
-    [[self.user confirmSignUp:confirmationCode forceAliasCreation:NO] continueWithBlock: ^id _Nullable(AWSTask<AWSCognitoIdentityUserConfirmSignUpResponse *> * _Nonnull task) {
+    [[self.user confirmSignUp:confirmationCode forceAliasCreation:YES] continueWithBlock: ^id _Nullable(AWSTask<AWSCognitoIdentityUserConfirmSignUpResponse *> * _Nonnull task) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if(task.error){
                 if(task.error){
