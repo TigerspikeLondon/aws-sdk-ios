@@ -212,7 +212,7 @@ id<AWSUIConfiguration> config = nil;
 
 - (void)setUp {
     _userNameRow = [[AWSFormTableCell alloc] initWithPlaceHolder:@"User Name" staticText:self.user.username];
-    _confirmationCodeRow = [[AWSFormTableCell alloc] initWithPlaceHolder:@"Confiration Code" type:InputTypeText];
+    _confirmationCodeRow = [[AWSFormTableCell alloc] initWithPlaceHolder:@"Confirmation Code" type:InputTypeText];
     _tableDelegate = [AWSFormTableDelegate new];
     [self.tableDelegate addCell:self.userNameRow];
     [self.tableDelegate addCell:self.confirmationCodeRow];
@@ -245,7 +245,7 @@ id<AWSUIConfiguration> config = nil;
                          completion:nil];
         return;
     }
-    [[self.user confirmSignUp:confirmationCode forceAliasCreation:YES] continueWithBlock: ^id _Nullable(AWSTask<AWSCognitoIdentityUserConfirmSignUpResponse *> * _Nonnull task) {
+    [[self.user confirmSignUp:confirmationCode forceAliasCreation:NO] continueWithBlock: ^id _Nullable(AWSTask<AWSCognitoIdentityUserConfirmSignUpResponse *> * _Nonnull task) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if(task.error){
                 if(task.error){
