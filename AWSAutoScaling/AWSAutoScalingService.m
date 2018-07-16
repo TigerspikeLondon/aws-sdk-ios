@@ -26,7 +26,7 @@
 #import "AWSAutoScalingResources.h"
 
 static NSString *const AWSInfoAutoScaling = @"AutoScaling";
-static NSString *const AWSAutoScalingSDKVersion = @"2.6.12";
+static NSString *const AWSAutoScalingSDKVersion = @"2.6.24";
 
 
 @interface AWSAutoScalingResponseSerializer : AWSXMLResponseSerializer
@@ -46,6 +46,7 @@ static NSDictionary *errorCodeDictionary = nil;
                             @"ResourceContention" : @(AWSAutoScalingErrorResourceContention),
                             @"ResourceInUse" : @(AWSAutoScalingErrorResourceInUse),
                             @"ScalingActivityInProgress" : @(AWSAutoScalingErrorScalingActivityInProgress),
+                            @"ServiceLinkedRoleFailure" : @(AWSAutoScalingErrorServiceLinkedRoleFailure),
                             };
 }
 

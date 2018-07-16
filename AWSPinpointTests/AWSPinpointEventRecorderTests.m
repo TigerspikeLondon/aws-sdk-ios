@@ -110,10 +110,10 @@ NSUInteger const AWSPinpointClientInvalidEvent = 1;
     config.enableAutoSessionRecording = NO;
     [[NSUserDefaults standardUserDefaults] removeSuiteNamed:@"testEventsWithNoSessionId"];
     config.userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"testEventsWithNoSessionId"];
-    AWSPinpoint *pinpoint = [AWSPinpoint pinpointWithConfiguration:config];
     [config.userDefaults setObject:nil forKey:AWSPinpointSessionKey];
     [config.userDefaults removeObjectForKey:AWSPinpointSessionKey];
     [config.userDefaults synchronize];
+    AWSPinpoint *pinpoint = [AWSPinpoint pinpointWithConfiguration:config];
     [[pinpoint.analyticsClient.eventRecorder removeAllEvents] waitUntilFinished];
     
     AWSPinpointEvent *event1 = [[AWSPinpointEvent alloc] initWithEventType:@"TEST"
@@ -1647,7 +1647,7 @@ NSUInteger const AWSPinpointClientInvalidEvent = 1;
     __block int successfulBatchSubmissions = 0;
     __block int successfulEventsSubmitted = 0;
 
-    for (int i=0; i< numberOfEvents; i++) {
+    for (int i=0; i < numberOfEvents; i++) {
         [[pinpoint.analyticsClient.eventRecorder submitAllEvents] continueWithBlock:^id _Nullable(AWSTask * _Nonnull task) {
             if (!task.error) {
                 XCTAssertTrue([task.result isKindOfClass:[NSArray class]]);

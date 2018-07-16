@@ -179,7 +179,7 @@
     XCTAssertEqualObjects(endpoint.URL, [NSURL URLWithString:@"https://elasticloadbalancing.ap-northeast-2.amazonaws.com"]);
     XCTAssertEqualObjects(endpoint.hostName, @"elasticloadbalancing.ap-northeast-2.amazonaws.com");
     XCTAssertFalse(endpoint.useUnsafeURL);
-
+    
     endpoint = [[AWSEndpoint alloc] initWithRegion:AWSRegionAPSoutheast2
                                            service:AWSServiceKinesis
                                       useUnsafeURL:NO];
@@ -189,6 +189,28 @@
     XCTAssertEqualObjects(endpoint.serviceName, @"kinesis");
     XCTAssertEqualObjects(endpoint.URL, [NSURL URLWithString:@"https://kinesis.ap-southeast-2.amazonaws.com"]);
     XCTAssertEqualObjects(endpoint.hostName, @"kinesis.ap-southeast-2.amazonaws.com");
+    XCTAssertFalse(endpoint.useUnsafeURL);
+    
+    endpoint = [[AWSEndpoint alloc] initWithRegion:AWSRegionUSWest2
+                                           service:AWSServiceKinesisVideo
+                                      useUnsafeURL:NO];
+    XCTAssertEqual(endpoint.regionType, AWSRegionUSWest2);
+    XCTAssertEqualObjects(endpoint.regionName, @"us-west-2");
+    XCTAssertEqual(endpoint.serviceType, AWSServiceKinesisVideo);
+    XCTAssertEqualObjects(endpoint.serviceName, @"kinesisvideo");
+    XCTAssertEqualObjects(endpoint.URL, [NSURL URLWithString:@"https://kinesisvideo.us-west-2.amazonaws.com"]);
+    XCTAssertEqualObjects(endpoint.hostName, @"kinesisvideo.us-west-2.amazonaws.com");
+    XCTAssertFalse(endpoint.useUnsafeURL);
+    
+    endpoint = [[AWSEndpoint alloc] initWithRegion:AWSRegionEUCentral1
+                                           service:AWSServiceKinesisVideoArchivedMedia
+                                      useUnsafeURL:NO];
+    XCTAssertEqual(endpoint.regionType, AWSRegionEUCentral1);
+    XCTAssertEqualObjects(endpoint.regionName, @"eu-central-1");
+    XCTAssertEqual(endpoint.serviceType, AWSServiceKinesisVideoArchivedMedia);
+    XCTAssertEqualObjects(endpoint.serviceName, @"kinesisvideo");
+    XCTAssertEqualObjects(endpoint.URL, [NSURL URLWithString:@"https://kinesisvideo.eu-central-1.amazonaws.com"]);
+    XCTAssertEqualObjects(endpoint.hostName, @"kinesisvideo.eu-central-1.amazonaws.com");
     XCTAssertFalse(endpoint.useUnsafeURL);
 
     endpoint = [[AWSEndpoint alloc] initWithRegion:AWSRegionSAEast1
@@ -255,6 +277,17 @@
     XCTAssertEqualObjects(endpoint.serviceName, @"sqs");
     XCTAssertEqualObjects(endpoint.URL, [NSURL URLWithString:@"https://sqs.us-east-1.amazonaws.com"]);
     XCTAssertEqualObjects(endpoint.hostName, @"sqs.us-east-1.amazonaws.com");
+    XCTAssertFalse(endpoint.useUnsafeURL);
+    
+    endpoint = [[AWSEndpoint alloc] initWithRegion:AWSRegionUSEast1
+                                           service:AWSServiceTranscribe
+                                      useUnsafeURL:NO];
+    XCTAssertEqual(endpoint.regionType, AWSRegionUSEast1);
+    XCTAssertEqualObjects(endpoint.regionName, @"us-east-1");
+    XCTAssertEqual(endpoint.serviceType, AWSServiceTranscribe);
+    XCTAssertEqualObjects(endpoint.serviceName, @"transcribe");
+    XCTAssertEqualObjects(endpoint.URL, [NSURL URLWithString:@"https://transcribe.us-east-1.amazonaws.com"]);
+    XCTAssertEqualObjects(endpoint.hostName, @"transcribe.us-east-1.amazonaws.com");
     XCTAssertFalse(endpoint.useUnsafeURL);
 
     endpoint = [[AWSEndpoint alloc] initWithRegion:AWSRegionAPSouth1
