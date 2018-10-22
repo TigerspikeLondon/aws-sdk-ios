@@ -1,5 +1,5 @@
 //
-// Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
@@ -13,17 +13,12 @@
 // permissions and limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
-#import "MQTTMessage.h"
+#import "AWSGZIPEncodingJSONRequestSerializer.h"
 
-@interface MQttTxFlow : NSObject 
+NS_ASSUME_NONNULL_BEGIN
 
-+ (id)flowWithMsg:(MQTTMessage*)aMsg
-         deadline:(unsigned int)aDeadline;
-- (id)initWithMsg:(MQTTMessage*)aMsg deadline:(unsigned int)aDeadline;
-
-@property (strong) MQTTMessage* msg;
-@property (assign) unsigned int deadline;
+@interface AWSKinesisRequestSerializer : AWSGZIPEncodingJSONRequestSerializer
 
 @end
 
+NS_ASSUME_NONNULL_END

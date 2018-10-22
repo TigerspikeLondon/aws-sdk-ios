@@ -1,5 +1,5 @@
 //
-// Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
@@ -13,4 +13,20 @@
 // permissions and limitations under the License.
 //
 
-#import "AWSTestUtility.h"
+#import "AWSMQttTxFlow.h"
+
+@implementation AWSMQttTxFlow
+
++ (id)flowWithMsg:(AWSMQTTMessage*)msg
+         deadline:(unsigned int)deadline {
+   return [[AWSMQttTxFlow alloc] initWithMsg:msg deadline:deadline];
+}
+
+- (id)initWithMsg:(AWSMQTTMessage*)aMsg
+         deadline:(unsigned int)aDeadline {
+   _msg = aMsg;
+   _deadline = aDeadline;
+   return self;
+}
+
+@end

@@ -1,5 +1,5 @@
 //
-// Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
@@ -13,20 +13,12 @@
 // permissions and limitations under the License.
 //
 
-#import "MQttTxFlow.h"
+#import "AWSGZIPEncodingJSONRequestSerializer.h"
 
-@implementation MQttTxFlow
+NS_ASSUME_NONNULL_BEGIN
 
-+ (id)flowWithMsg:(MQTTMessage*)msg
-         deadline:(unsigned int)deadline {
-   return [[MQttTxFlow alloc] initWithMsg:msg deadline:deadline];
-}
-
-- (id)initWithMsg:(MQTTMessage*)aMsg
-         deadline:(unsigned int)aDeadline {
-   _msg = aMsg;
-   _deadline = aDeadline;
-   return self;
-}
+@interface AWSFirehoseRequestSerializer : AWSGZIPEncodingJSONRequestSerializer
 
 @end
+
+NS_ASSUME_NONNULL_END
